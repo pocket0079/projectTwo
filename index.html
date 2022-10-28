@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Two!</title>
+    <title>API Playground</title>
 </head>
+
 <body>
     <h1>Pokemon Battle Chart</h1>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, consequatur adipisci id atque vel odit.</p>
@@ -14,99 +16,130 @@
         <input type="submit">
     </form>
 
-    <form action="#" class="userType">
+    <form action="#" class="userType" id="selection">
         <ul>
             <li>
-                <input type="radio" id="normal">Normal
-                <label for="normal"></label>
+                <input type="radio" name="selection" value="1" class="radioBtn">
+                <label for="normal">Normal</label>
             </li>
 
             <li>
-                <input type="radio" id="fire">Fire
-                <label for="fire"></label>
+                <input type="radio" name="selection" value="10" class="radioBtn">
+                <label for="fire">Fire</label>
             </li>
 
             <li>
-                <input type="radio" id="water">Water
-                <label for="water"></label>
+                <input type="radio" name="selection" value="11" class="radioBtn">
+                <label for="water">Water</label>
             </li>
 
             <li>
-                <input type="radio" id="grass">Grass
-                <label for="grass"></label>
+                <input type="radio" name="selection" value="12" class="radioBtn">
+                <label for="grass">Grass</label>
             </li>
 
             <li>
-                <input type="radio" id="electric">Electric
-                <label for="electric"></label>
+                <input type="radio" name="selection" value="13" class="radioBtn">
+                <label for="electric">Electric</label>
             </li>
 
             <li>
-                    <input type="radio" id="ice">Ice
-                    <label for="ice"></label>
+                <input type="radio" name="selection" value="15" class="radioBtn">
+                <label for="ice">Ice</label>
             </li>
 
             <li>
-                <input type="radio" id="fighting">Fighting
-                <label for="fighting"></label>
+                <input type="radio" name="selection" value="2" class="radioBtn">
+                <label for="fighting">Fighting</label>
             </li>
 
             <li>
-                <input type="radio" id="poison">Poison
-                <label for="poison"></label>
+                <input type="radio" name="selection" value="4" class="radioBtn">
+                <label for="poison">Poison</label>
             </li>
 
             <li>
-                <input type="radio" id="ground">Ground
-                <label for="ground"></label>
+                <input type="radio" name="selection" value="5" class="radioBtn">
+                <label for="ground">Ground</label>
             </li>
 
             <li>
-                <input type="radio" id="flying">Flying
-                <label for="flying"></label>
+                <input type="radio" name="selection" value="3" class="radioBtn">
+                <label for="flying">Flying</label>
             </li>
 
             <li>
-                <input type="radio" id="psychic">Psychic
-                <label for="psychic"></label>
+                <input type="radio" name="selection" value="14" class="radioBtn">
+                <label for="psychic">Psychic</label>
             </li>
 
             <li>
-                <input type="radio" id="bug">Bug
-                <label for="bug"></label>
+                <input type="radio" name="selection" value="7" class="radioBtn">
+                <label for="bug">Bug</label>
             </li>
 
             <li>
-                <input type="radio" id="rock">Rock
-                <label for="rock"></label>
+                <input type="radio" name="selection" value="6" class="radioBtn">
+                <label for="rock">Rock</label>
             </li>
 
             <li>
-                <input type="radio" id="ghost">Ghost
-                <label for="ghost"></label>
+                <input type="radio" name="selection" value="8" class="radioBtn">
+                <label for="ghost">Ghost</label>
             </li>
 
             <li>
-                <input type="radio" id="dark">Dark
-                <label for="dark"></label>
+                <input type="radio" name="selection" value="17" class="radioBtn">
+                <label for="dark">Dark</label>
             </li>
 
             <li>
-                <input type="radio" id="dragon">Dragon
-                <label for="dragon"></label>
+                <input type="radio" name="selection" value="16" class="radioBtn">
+                <label for="dragon">Dragon</label>
             </li>
 
             <li>
-                <input type="radio" id="steel">Steel
-                <label for="steel"></label>
+                <input type="radio" name="selection" value="9" class="radioBtn">
+                <label for="steel">Steel</label>
             </li>
 
             <li>
-                <input type="radio" id="fairy">Fairy
-                <label for="fairy"></label>
+                <input type="radio" name="selection" value="18" class="radioBtn">
+                <label for="fairy">Fairy</label>
             </li>
         </ul>
-
     </form>
+
+    <div class="offenseContainer">
+        <h2>Offense</h2>
+        <h3>Double Damage To</h3>
+        <ul id="doubleDamageTo" class="statContainer">
+        </ul>
+
+        <h3>Half Damage To</h3>
+        <ul id="halfDamageTo" class="statContainer">
+        </ul>
+
+        <h3>No Damage To</h3>
+        <ul id="noDamageTo" class="statContainer">
+        </ul>
+    </div>
+
+    <div class="defenseContainer">
+        <h2>Defense</h2>
+        <h3>Double Damage From</h3>
+                <ul id="doubleDamageFrom" class="statContainer">
+                </ul>
+                
+                <h3>Half Damage From</h3>
+                <ul id="halfDamageFrom" class="statContainer">
+                </ul>
+                
+                <h3>No Damage From</h3>
+                <ul id="noDamageFrom" class="statContainer">
+                </ul>
+    </div>
+
 </body>
+<script src="./script.js"></script>
 </html>
