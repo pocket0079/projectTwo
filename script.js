@@ -1,12 +1,14 @@
 const pokeApp = {};
 //API info
 pokeApp.baseUrl = `https://pokeapi.co/api/v2/type/`
-
+pokeApp.pokemonUrl = `https://pokeapi.co/api/v2/pokemon/`
 //init method
 pokeApp.init = () => {
     //by making this one it prevents undefined.(error in the console)
     pokeApp.getType();
     pokeApp.eventListener();
+    pokeApp.getUserPokemon();
+    pokeApp.pokemonEventListener();
 };
 
 //method that gets the data from the API
@@ -20,11 +22,24 @@ pokeApp.getType = (q) => {
             pokeApp.getStats(response);
         })
 }
+//method to get pokemon from search bar
+pokeApp.getUserPokemon = (q) => {
+    fetch(`${pokeApp.pokemonUrl}${q}`)
+    .then((res) => {
+        return res.json()
+    })
+    .then((response) => {
+        pokeApp.getPokemon(response);
+        console.log(response)
+        
+    })
+}
 
 // clear containers
 pokeApp.clearContainers = function() {
     [...pokeApp.statContainer].forEach(container => {
         container.innerHTML = ''
+        
     })
 }
 //target for all stat containers
@@ -115,6 +130,17 @@ pokeApp.getStats = (response) => {
     })
 }
 
+pokeApp.getPokemon = (response) => {
+    console.log(response.sprites.front_default);
+
+    pokeApp.pokemonImage = response.sprites.front_default;
+
+    pokeApp.imgContainer = document.querySelector('.imageContainer');
+
+    pokeApp.image = document.createElement('img');
+    pokeApp.image.src = pokeApp.pokemonImage;
+    pokeApp.imgContainer.appendChild(pokeApp.image);
+}
 
 pokeApp.eventListener = () => {
     //target the thing we are listening to
@@ -132,6 +158,24 @@ pokeApp.eventListener = () => {
         })
 
     }) 
+
+   
 }
+//pokemon search bar event listener
+pokeApp.pokemonEventListener = () => {
+    const form = document.querySelector('form');
+    const inputElement = document.querySelector('input')
+    form.addEventListener('submit', function(e){
+        //prevent default form 
+        e.preventDefault();
+        console.log("it worked")
+        //gets the user input 
+        const userInput = inputElement.value;
+        console.log(userInput);
+        //input value passes to the getUserPokemon Api 
+        pokeApp.getUserPokemon(userInput);
+    })
+}
+
 
 pokeApp.init();
