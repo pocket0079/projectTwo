@@ -39,7 +39,6 @@ pokeApp.getUserPokemon = (q) => {
 pokeApp.clearContainers = function() {
     [...pokeApp.statContainer].forEach(container => {
         container.innerHTML = ''
-        
     })
 }
 //target for all stat containers
@@ -134,12 +133,18 @@ pokeApp.getPokemon = (response) => {
     console.log(response.sprites.front_default);
 
     pokeApp.pokemonImage = response.sprites.front_default;
+    pokeApp.pokemonName = response.name;
 
     pokeApp.imgContainer = document.querySelector('.imageContainer');
+    pokeApp.nameContainer = document.getElementById('pkmnName')
 
     pokeApp.image = document.createElement('img');
     pokeApp.image.src = pokeApp.pokemonImage;
+
+    pokeApp.imgContainer.innerHTML = ''
     pokeApp.imgContainer.appendChild(pokeApp.image);
+    pokeApp.nameContainer.textContent = pokeApp.pokemonName;
+
 }
 
 pokeApp.eventListener = () => {
@@ -159,7 +164,6 @@ pokeApp.eventListener = () => {
 
     }) 
 
-   
 }
 //pokemon search bar event listener
 pokeApp.pokemonEventListener = () => {
@@ -176,6 +180,5 @@ pokeApp.pokemonEventListener = () => {
         pokeApp.getUserPokemon(userInput);
     })
 }
-
 
 pokeApp.init();
