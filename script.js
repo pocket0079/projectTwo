@@ -5,10 +5,9 @@ pokeApp.pokemonUrl = `https://pokeapi.co/api/v2/pokemon/`
 //init method
 pokeApp.init = () => {
     //by making this one it prevents undefined.(error in the console)
-    pokeApp.getType();
     pokeApp.eventListener();
-    pokeApp.getUserPokemon();
     pokeApp.pokemonEventListener();
+    // pokeApp.getTypeFromUserSearch();
 };
 
 //method that gets the data from the API
@@ -22,6 +21,7 @@ pokeApp.getType = (q) => {
             pokeApp.getStats(response);
         })
 }
+
 //method to get pokemon from search bar
 pokeApp.getUserPokemon = (q) => {
     fetch(`${pokeApp.pokemonUrl}${q}`)
@@ -29,10 +29,22 @@ pokeApp.getUserPokemon = (q) => {
         return res.json()
     })
     .then((response) => {
-        pokeApp.getPokemon(response);
         console.log(response)
-        
+        pokeApp.getPokemon(response);
     })
+}
+
+//method that gets the battle data from the API with users search input
+pokeApp.getTypeFromUserSearch = (q) => {
+
+    fetch(`${q}`)
+        .then((res) => {
+            return res.json()
+        })
+        .then((response) => {
+            pokeApp.getStats(response);
+            console.log(response)
+        })
 }
 
 // clear containers
@@ -43,7 +55,6 @@ pokeApp.clearContainers = function() {
 }
 //target for all stat containers
 pokeApp.statContainer = document.getElementsByClassName('statContainer')
-console.log(pokeApp.statContainer)
 
 //target diffrent stat containers
 pokeApp.doubleDamageFromContainer = document.getElementById('doubleDamageFrom')
@@ -60,6 +71,9 @@ pokeApp.noDamageToContainer = document.getElementById('noDamageTo')
 
 
 pokeApp.getStats = (response) => {
+    // console.log(response)
+    // const responseObjects = [...response]
+    // console.log(responseObjects)
     pokeApp.clearContainers();
     //get to the different stat arrays
     pokeApp.doubleDamageFrom = response.damage_relations.double_damage_from
@@ -130,10 +144,29 @@ pokeApp.getStats = (response) => {
 }
 
 pokeApp.getPokemon = (response) => {
-    console.log(response.sprites.front_default);
 
+    //grab pkmn picture
     pokeApp.pokemonImage = response.sprites.front_default;
+
+    //grab pkmn name
     pokeApp.pokemonName = response.name;
+
+    //target ul for type list and clear if any existing info
+    const pokemonTypeUl = document.getElementById('typeList')
+    pokemonTypeUl.innerHTML = ''
+
+    //grab pkmn type, if more than one, loop through array and list both
+    pokeApp.pokemonType = response.types.forEach(object => {
+
+        //create and li and insert name of pokemon, then append to ul
+        pokeApp.pokemonTypeLi = document.createElement('li')
+        pokeApp.pokemonTypeLi.textContent = object.type.name
+        pokemonTypeUl.appendChild(pokeApp.pokemonTypeLi)
+
+        //take type response url and put into seperate function that also gets battle data. 
+        //issue with pkmn with multiple types
+        pokeApp.getTypeFromUserSearch(object.type.url)
+    });
 
     pokeApp.imgContainer = document.querySelector('.imageContainer');
     pokeApp.nameContainer = document.getElementById('pkmnName')
@@ -172,13 +205,17 @@ pokeApp.pokemonEventListener = () => {
     form.addEventListener('submit', function(e){
         //prevent default form 
         e.preventDefault();
-        console.log("it worked")
+
         //gets the user input 
         const userInput = inputElement.value;
-        console.log(userInput);
         //input value passes to the getUserPokemon Api 
         pokeApp.getUserPokemon(userInput);
     })
 }
 
 pokeApp.init();
+
+
+//find out type/types of pokemon, at that point. create an array of strings. (fire, water, elec)
+//that array is what we will use to populate offense/defense
+//forEach each item in the array
