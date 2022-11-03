@@ -26,16 +26,23 @@ pokeApp.getType = (q) => {
 pokeApp.getUserPokemon = (q) => {
     fetch(`${pokeApp.pokemonUrl}${q}`)
     .then((res) => {
+       if(res.ok === true){
         return res.json()
+       } else{
+        throw new Error(res.statusText);
+       }
+        
     })
     .then((response) => {
-        console.log(response.types)
-        if (response.types.length > 1) {
-            console.log('hi')
-        }
-        pokeApp.getPokemon(response);
+
+        pokeApp.getPokemon(response);     
     })
-}
+
+    .catch(error =>{
+        alert('Oops! please try again');
+    })
+    
+} 
 
 //method that gets the battle data from the API with users search input
 pokeApp.getTypeFromUserSearch = (q) => {
@@ -220,11 +227,16 @@ pokeApp.pokemonEventListener = () => {
         //prevent default form 
         e.preventDefault();
 
+        
         //gets the user input 
         const userInput = inputElement.value;
+
+
         //input value passes to the getUserPokemon Api 
         pokeApp.getUserPokemon(userInput);
+        inputElement.value = '';
     })
+    
 }
 
 pokeApp.init();
