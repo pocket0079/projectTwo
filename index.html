@@ -8,25 +8,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./script.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <title>Pokemon Battle Chart</title>
 </head>
 
 <body>
-    <h1>Pokémon Battle Chart</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, consequatur adipisci id atque vel odit.</p>
-    
-    <section class="pkmnPicAndName">
-        <div class="imageContainer">
+    <header>
+        <div class="logo">
+           <img src="./assets/International_Pokémon_logo.svg.png" alt="pokemon logo"> 
         </div>
-        <h2 id="pkmnName"></h2>
         
+        <h1>Battle Chart</h1>
+        <p>Search for a Pokémon by name or Pokédex number</p>
+        
+        <section class="pkmnPicAndName">
+            <div class="imageContainer"></div>
+            <h2 id="pkmnName"></h2>
+        </section>
 
-    </section>
-    <form action="#" class="userPkmn">
-        <input type="text">
-        <input type="submit">
-    </form>
+        <form action="#" class="userPkmn">
+            <input type="text">
+            <input type="submit" value="🔍">
+        </form>
+
+    </header>
 
     <form action="#" class="userType" id="selection">
         <ul>

@@ -5,9 +5,7 @@ pokeApp.pokemonUrl = `https://pokeapi.co/api/v2/pokemon/`
 //init method
 pokeApp.init = () => {
     //by making this one it prevents undefined.(error in the console)
-    pokeApp.getType();
     pokeApp.eventListener();
-    pokeApp.getUserPokemon();
     pokeApp.pokemonEventListener();
 };
 
@@ -26,14 +24,22 @@ pokeApp.getType = (q) => {
 pokeApp.getUserPokemon = (q) => {
     fetch(`${pokeApp.pokemonUrl}${q}`)
     .then((res) => {
+       if(res.ok === true){
         return res.json()
-    })
-    .then((response) => {
-        pokeApp.getPokemon(response);
-        console.log(response)
+       } else{
+        throw new Error(res.statusText);
+       }
         
     })
-}
+    .then((response) => {
+        pokeApp.getPokemon(response);     
+    })
+
+    .catch(error =>{
+        alert('Oops! please try again');
+    })
+    
+} 
 
 // clear containers
 pokeApp.clearContainers = function() {
@@ -43,7 +49,6 @@ pokeApp.clearContainers = function() {
 }
 //target for all stat containers
 pokeApp.statContainer = document.getElementsByClassName('statContainer')
-console.log(pokeApp.statContainer)
 
 //target diffrent stat containers
 pokeApp.doubleDamageFromContainer = document.getElementById('doubleDamageFrom')
@@ -172,13 +177,15 @@ pokeApp.pokemonEventListener = () => {
     form.addEventListener('submit', function(e){
         //prevent default form 
         e.preventDefault();
-        console.log("it worked")
+        
         //gets the user input 
         const userInput = inputElement.value;
-        console.log(userInput);
+       
         //input value passes to the getUserPokemon Api 
         pokeApp.getUserPokemon(userInput);
+        inputElement.value = '';
     })
+    
 }
 
 pokeApp.init();
