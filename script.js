@@ -36,7 +36,6 @@ pokeApp.getUserPokemon = (q) => {
     .then((response) => {
 
         pokeApp.getPokemon(response);     
-
     })
 
     .catch(error =>{
@@ -54,7 +53,6 @@ pokeApp.getTypeFromUserSearch = (q) => {
         })
         .then((response) => {
             pokeApp.getStats(response);
-            console.log(response)
         })
 }
 
@@ -82,9 +80,7 @@ pokeApp.noDamageToContainer = document.getElementById('noDamageTo')
 
 
 pokeApp.getStats = (response) => {
-    // console.log(response)
-    // const responseObjects = [...response]
-    // console.log(responseObjects)
+
     pokeApp.clearContainers();
     //get to the different stat arrays
     pokeApp.doubleDamageFrom = response.damage_relations.double_damage_from
@@ -156,6 +152,8 @@ pokeApp.getStats = (response) => {
 
 pokeApp.getPokemon = (response) => {
 
+    // console.log(response.types)
+
     //grab pkmn picture
     pokeApp.pokemonImage = response.sprites.front_default;
 
@@ -168,14 +166,26 @@ pokeApp.getPokemon = (response) => {
 
     //grab pkmn type, if more than one, loop through array and list both
     pokeApp.pokemonType = response.types.forEach(object => {
+        console.log(object.type)
+
+        const pkmnTypeUrl = object.type
+
+        console.log(typeof pkmnTypeUrl)
+
 
         //create and li and insert name of pokemon, then append to ul
         pokeApp.pokemonTypeLi = document.createElement('li')
         pokeApp.pokemonTypeLi.textContent = object.type.name
         pokemonTypeUl.appendChild(pokeApp.pokemonTypeLi)
 
+
+            //find out type/types of pokemon, at that point. create an array of strings. (fire, water, elec)
+//that array is what we will use to populate offense/defense
+//forEach each item in the array
+
         //take type response url and put into seperate function that also gets battle data. 
         //issue with pkmn with multiple types
+        // console.log(object.type.url)
         pokeApp.getTypeFromUserSearch(object.type.url)
     });
 
@@ -230,8 +240,3 @@ pokeApp.pokemonEventListener = () => {
 }
 
 pokeApp.init();
-
-
-//find out type/types of pokemon, at that point. create an array of strings. (fire, water, elec)
-//that array is what we will use to populate offense/defense
-//forEach each item in the array
