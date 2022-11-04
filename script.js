@@ -34,8 +34,7 @@ pokeApp.getUserPokemon = (q) => {
         
     })
     .then((response) => {
-
-        pokeApp.getPokemon(response);     
+        pokeApp.getPokemon(response);   
     })
 
     .catch(error =>{
@@ -44,7 +43,12 @@ pokeApp.getUserPokemon = (q) => {
     
 } 
 
-//method that gets the battle data from the API with users search input
+//function that gets the battle data from the API with users search input
+
+//create array to store type objects from response to loop through later if there is a pokemon with more than 1 type
+
+const array = []
+
 pokeApp.getTypeFromUserSearch = (q) => {
 
     fetch(`${q}`)
@@ -53,8 +57,12 @@ pokeApp.getTypeFromUserSearch = (q) => {
         })
         .then((response) => {
             pokeApp.getStats(response);
+            array.push(response)
+            
         })
 }
+console.log(array)
+
 
 // clear containers
 pokeApp.clearContainers = function() {
@@ -78,8 +86,13 @@ pokeApp.noDamageFromContainer = document.getElementById('noDamageFrom')
 
 pokeApp.noDamageToContainer = document.getElementById('noDamageTo')
 
-
+//function that gets the stength/weakness types and displays it on the page
 pokeApp.getStats = (response) => {
+
+    console.log(array)
+    array.forEach(object => {
+        console.log(object)
+    })
 
     pokeApp.clearContainers();
     //get to the different stat arrays
@@ -150,9 +163,8 @@ pokeApp.getStats = (response) => {
     })
 }
 
+//picture and pokemon name display
 pokeApp.getPokemon = (response) => {
-
-    // console.log(response.types)
 
     //grab pkmn picture
     pokeApp.pokemonImage = response.sprites.front_default;
@@ -166,28 +178,19 @@ pokeApp.getPokemon = (response) => {
 
     //grab pkmn type, if more than one, loop through array and list both
     pokeApp.pokemonType = response.types.forEach(object => {
-        console.log(object.type)
-
-        const pkmnTypeUrl = object.type
-
-        console.log(typeof pkmnTypeUrl)
-
 
         //create and li and insert name of pokemon, then append to ul
         pokeApp.pokemonTypeLi = document.createElement('li')
         pokeApp.pokemonTypeLi.textContent = object.type.name
         pokemonTypeUl.appendChild(pokeApp.pokemonTypeLi)
 
-
-            //find out type/types of pokemon, at that point. create an array of strings. (fire, water, elec)
-//that array is what we will use to populate offense/defense
-//forEach each item in the array
-
         //take type response url and put into seperate function that also gets battle data. 
         //issue with pkmn with multiple types
         // console.log(object.type.url)
         pokeApp.getTypeFromUserSearch(object.type.url)
     });
+
+    array.length = 0
 
     pokeApp.imgContainer = document.querySelector('.imageContainer');
     pokeApp.nameContainer = document.getElementById('pkmnName')
@@ -198,9 +201,10 @@ pokeApp.getPokemon = (response) => {
     pokeApp.imgContainer.innerHTML = ''
     pokeApp.imgContainer.appendChild(pokeApp.image);
     pokeApp.nameContainer.textContent = pokeApp.pokemonName;
-
 }
 
+
+//radio button event listener
 pokeApp.eventListener = () => {
     //target the thing we are listening to
     const radioButtons = document.getElementsByClassName("radioBtn");
@@ -215,10 +219,10 @@ pokeApp.eventListener = () => {
             //pass the chosen type into the api call
             pokeApp.getType(chosenType);
         })
-
     }) 
-
 }
+
+
 //pokemon search bar event listener
 pokeApp.pokemonEventListener = () => {
     const form = document.querySelector('form');
@@ -230,7 +234,6 @@ pokeApp.pokemonEventListener = () => {
         
         //gets the user input 
         const userInput = inputElement.value;
-
 
         //input value passes to the getUserPokemon Api 
         pokeApp.getUserPokemon(userInput);
