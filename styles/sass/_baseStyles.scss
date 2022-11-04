@@ -8,20 +8,39 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
-
-
 body{
-    background-color: yellow;
+    font-size: 1.6rem;
+    background-color: palegoldenrod;
+}
+
+.wrapper{
+width: 80%;
+margin: 0 auto;
 }
 
 h1{
-    font-family: 'Press Start 2P', cursive;
     text-align: center;
-
+    color: darkred; 
+    font-family: 'Press Start 2P', cursive;
 }
 
-.logo img{
-    width: 100%;
-    
+h2, h3{
+    margin: 0; 
+    text-transform: capitalize;  
+    font-family: 'Press Start 2P', cursive;
 }
+
+p{
+    font-size: 1rem;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+section {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+
 

@@ -1,0 +1,30 @@
+// Styling for the Seach Pokemon //
+
+.container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.pkmnPicAndName {
+    display: flex;
+    justify-content: space-around;
+}
+
+.imageContainer {
+    margin: auto;
+}
+
+.imageContainer img {
+    border: 3px solid red;
+    border-radius: 50%;
+    padding: 1%;
+    background-color: white;
+}
+
+.container h2 {
+    text-align: end;
+    font-size: 1.5rem;
+}

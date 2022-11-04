@@ -13,157 +13,165 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-           <img src="./assets/International_Pokémon_logo.svg.png" alt="pokemon logo"> 
-        </div>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+            <img src="./assets/International_Pokémon_logo.svg.png" alt="pokemon logo"> 
+            </div>
+            <h1>Battle Chart</h1>
+        </header>   
 
-        
-        <h1>Battle Chart</h1>
-        <p>Search for a Pokémon by name or Pokédex number</p>
-        
-        <section class="pkmnPicAndName">
-            <div class="imageContainer"></div>
-            <h2 id="pkmnName"></h2>
-             <ul id="typeList"></ul>
-        </section>
+        <main>
+            <section class="pkmnPicAndName">
 
-        <form action="#" class="userPkmn">
-            <input type="text">
-            <input type="submit" value="🔍">
+                <div class="container">
+                <p>Search for a Pokémon by name or Pokédex number:</p>
+                <form action="#" class="userPkmn">
+                    <input type="text">
+                    <input type="submit" value="🔍">
+                </form>
+                </div>
+
+                <div class="imageContainer"></div>
+
+                <div class="container">
+                        <h2 id="pkmnName"></h2>
+                        <ul id="typeList"></ul>
+                </div>
+
+            </section>
+        
+    
+        
+        <form action="#" class="userType" id="selection">
+            <p>Click a below type to find out the stats:</p>    
+            <ul>
+                <li>
+                    <input type="radio" name="selection" value="1" id="normal" class="radioBtn">
+                    <label for="normal">Normal</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="10" id="fire" class="radioBtn">
+                    <label for="fire">Fire</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="11" id="water" class="radioBtn">
+                    <label for="water">Water</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="12" id="grass" class="radioBtn">
+                    <label for="grass">Grass</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="13" id="electric" class="radioBtn">
+                    <label for="electric">Electric</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="15" id="ice" class="radioBtn">
+                    <label for="ice">Ice</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="2" id="fighting" class="radioBtn">
+                    <label for="fighting">Fighting</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="4" id="poison" class="radioBtn">
+                    <label for="poison">Poison</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="5" id="ground" class="radioBtn">
+                    <label for="ground">Ground</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="3" id="flying" class="radioBtn">
+                    <label for="flying">Flying</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="14" id="psychic" class="radioBtn">
+                    <label for="psychic">Psychic</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="7" id="bug" class="radioBtn">
+                    <label for="bug">Bug</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="6" id="rock" class="radioBtn">
+                    <label for="rock">Rock</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="8" id="ghost" class="radioBtn">
+                    <label for="ghost">Ghost</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="17" id="dark" class="radioBtn">
+                    <label for="dark">Dark</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="16" id="dragon" class="radioBtn">
+                    <label for="dragon">Dragon</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="9" id="steel" class="radioBtn">
+                    <label for="steel">Steel</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="selection" value="18" id="fairy" class="radioBtn">
+                    <label for="fairy">Fairy</label>
+                </li>
+            </ul>
         </form>
 
-    </header>
+        <section class="damageStats">
+            <div class="offenseContainer">
+                <h2>Offense</h2>
+                <h3>Super Effective!</h3>
+                <ul id="doubleDamageTo" class="statContainer">
+                </ul>
 
-     
-       
-    </section>
-   
+                <h3>Not very effective...</h3>
+                <ul id="halfDamageTo" class="statContainer">
+                </ul>
 
-    <form action="#" class="userType" id="selection">
-        <ul>
-            <li>
-                <input type="radio" name="selection" value="1" class="radioBtn">
-                <label for="normal">Normal</label>
-            </li>
+                <h3>No Damage To</h3>
+                <ul id="noDamageTo" class="statContainer">
+                </ul>
+            </div>
 
-            <li>
-                <input type="radio" name="selection" value="10" class="radioBtn">
-                <label for="fire">Fire</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="11" class="radioBtn">
-                <label for="water">Water</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="12" class="radioBtn">
-                <label for="grass">Grass</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="13" class="radioBtn">
-                <label for="electric">Electric</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="15" class="radioBtn">
-                <label for="ice">Ice</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="2" class="radioBtn">
-                <label for="fighting">Fighting</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="4" class="radioBtn">
-                <label for="poison">Poison</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="5" class="radioBtn">
-                <label for="ground">Ground</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="3" class="radioBtn">
-                <label for="flying">Flying</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="14" class="radioBtn">
-                <label for="psychic">Psychic</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="7" class="radioBtn">
-                <label for="bug">Bug</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="6" class="radioBtn">
-                <label for="rock">Rock</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="8" class="radioBtn">
-                <label for="ghost">Ghost</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="17" class="radioBtn">
-                <label for="dark">Dark</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="16" class="radioBtn">
-                <label for="dragon">Dragon</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="9" class="radioBtn">
-                <label for="steel">Steel</label>
-            </li>
-
-            <li>
-                <input type="radio" name="selection" value="18" class="radioBtn">
-                <label for="fairy">Fairy</label>
-            </li>
-        </ul>
-    </form>
-
-    <div class="offenseContainer">
-        <h2>Offense</h2>
-        <h3>It's Super Effective!</h3>
-        <ul id="doubleDamageTo" class="statContainer">
-        </ul>
-
-        <h3>It's not very effective...</h3>
-        <ul id="halfDamageTo" class="statContainer">
-        </ul>
-
-        <h3>No Damage To</h3>
-        <ul id="noDamageTo" class="statContainer">
-        </ul>
-    </div>
-
-    <div class="defenseContainer">
-        <h2>Defense</h2>
-        <h3>It's Super Effective!</h3>
+            <div class="defenseContainer">
+                <h2>Defense</h2>
+                <h3>Super Effective!</h3>
                 <ul id="doubleDamageFrom" class="statContainer">
                 </ul>
                 
-                <h3>It's not very effective...</h3>
+                <h3>Not very effective...</h3>
                 <ul id="halfDamageFrom" class="statContainer">
                 </ul>
                 
                 <h3>No Damage From</h3>
                 <ul id="noDamageFrom" class="statContainer">
                 </ul>
-    </div>
+            </div>
+        </section>
 
+    </main>
+</div>
 </body>
 <script src="./script.js"></script>
 </html>

@@ -1,0 +1,36 @@
+//Styling for the Damage stat Cards
+.damageStats {
+    display: flex;
+    justify-content: center;
+}
+
+.offenseContainer {
+    border: 3px solid #2575bb;
+    background-color: #ffcc00;
+    margin-right: 5%;
+}
+
+.defenseContainer {
+    border: 3px solid #2575bb;
+    background-color: #ffcc00;
+
+}
+
+.damageStats h2 {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 10px;
+}
+
+.damageStats h3 {
+    font-size: 1rem;
+    text-align: center;
+    margin: 5px;
+}
+
+.damageStats ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    text-transform: capitalize;
+}
