@@ -236,14 +236,339 @@ html {
 }
 
 body {
-  background-color: yellow;
+  font-size: 1.6rem;
+  background-color: palegoldenrod;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
 }
 
 h1 {
-  font-family: "Press Start 2P", cursive;
   text-align: center;
+  color: darkred;
+  font-family: "Press Start 2P", cursive;
+}
+
+h2, h3 {
+  margin: 0;
+  text-transform: capitalize;
+  font-family: "Press Start 2P", cursive;
+}
+
+p {
+  font-size: 1rem;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+section {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .logo img {
-  width: 100%;
+  width: 50%;
+}
+
+.container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.pkmnPicAndName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.imageContainer {
+  margin: auto;
+}
+
+.imageContainer img {
+  border: 3px solid red;
+  border-radius: 50%;
+  padding: 1%;
+  background-color: white;
+}
+
+.container h2 {
+  text-align: end;
+  font-size: 1.5rem;
+}
+
+input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+input[type=text] {
+  width: 80%;
+}
+
+label {
+  font-size: 1rem;
+  color: white;
+  width: 100px;
+  display: block;
+  padding: 10px;
+  margin: 1px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.userType ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: capitalize;
+}
+
+input[type=radio]#normal + label {
+  background: #A8A878;
+}
+
+input[type=radio]#normal + label:active {
+  background: #636347;
+}
+
+input[type=radio]#fire + label {
+  background: #F08030;
+}
+
+input[type=radio]#fire + label:active {
+  background: #894a1d;
+}
+
+input[type=radio]#water + label {
+  background: #6890F0;
+}
+
+input[type=radio]#water + label:active {
+  background: #4c6ab0;
+}
+
+input[type=radio]#grass + label {
+  background: #78C850;
+}
+
+input[type=radio]#grass + label:active {
+  background: #4b7e32;
+}
+
+input[type=radio]#electric + label {
+  background: #F9D74F;
+}
+
+input[type=radio]#electric + label:active {
+  background: #b49b36;
+}
+
+input[type=radio]#ice + label {
+  background: #98D8D8;
+}
+
+input[type=radio]#ice + label:active {
+  background: #79a4a4;
+}
+
+input[type=radio]#fighting + label {
+  background: #C03028;
+}
+
+input[type=radio]#fighting + label:active {
+  background: #822520;
+}
+
+input[type=radio]#poison + label {
+  background: #A140A1;
+}
+
+input[type=radio]#poison + label:active {
+  background: #581f58;
+}
+
+input[type=radio]#ground + label {
+  background: #E0C068;
+}
+
+input[type=radio]#ground + label:active {
+  background: #957f43;
+}
+
+input[type=radio]#flying + label {
+  background: #A890F0;
+}
+
+input[type=radio]#flying + label:active {
+  background: #67579a;
+}
+
+input[type=radio]#psychic + label {
+  background: #F85888;
+}
+
+input[type=radio]#psychic + label:active {
+  background: #9b3453;
+}
+
+input[type=radio]#bug + label {
+  background: #A8B820;
+}
+
+input[type=radio]#bug + label:active {
+  background: #5a6214;
+}
+
+input[type=radio]#rock + label {
+  background: #B8A038;
+}
+
+input[type=radio]#rock + label:active {
+  background: #6f6123;
+}
+
+input[type=radio]#ghost + label {
+  background: #705898;
+}
+
+input[type=radio]#ghost + label:active {
+  background: #493669;
+}
+
+input[type=radio]#dark + label {
+  background: #705848;
+}
+
+input[type=radio]#dark + label:active {
+  background: #3d2e23;
+}
+
+input[type=radio]#dragon + label {
+  background: #7038F8;
+}
+
+input[type=radio]#dragon + label:active {
+  background: #3c2572;
+}
+
+input[type=radio]#steel + label {
+  background: #B8B8D0;
+}
+
+input[type=radio]#steel + label:active {
+  background: #5e5e87;
+}
+
+input[type=radio]#fairy + label {
+  background: #FF65D5;
+}
+
+input[type=radio]#fairy + label:active {
+  background: #863470;
+}
+
+.damageStats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.offenseContainer {
+  border: 3px solid #2575bb;
+  background-color: #ffcc00;
+  margin-right: 5%;
+}
+
+.defenseContainer {
+  border: 3px solid #2575bb;
+  background-color: #ffcc00;
+}
+
+.damageStats h2 {
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  margin-top: 10px;
+}
+
+.damageStats h3 {
+  font-size: 1rem;
+  text-align: center;
+  margin: 5px;
+}
+
+.damageStats ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  text-transform: capitalize;
+}
+
+@media (max-width: 770px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+@media (max-width: 683px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 610px) {
+  .damageStats {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .offenseContainer {
+    margin: 0;
+  }
+}
+@media (max-width: 500px) {
+  .pkmnPicAndName {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .imageContainer {
+    padding-top: 20px;
+  }
+  .container h2 {
+    text-align: center;
+  }
 }
