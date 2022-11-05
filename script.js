@@ -7,7 +7,6 @@ pokeApp.init = () => {
     //by making this one it prevents undefined.(error in the console)
     pokeApp.eventListener();
     pokeApp.pokemonEventListener();
-    // pokeApp.getTypeFromUserSearch();
 };
 
 //method that gets the data from the API
@@ -34,11 +33,12 @@ pokeApp.getUserPokemon = (q) => {
         
     })
     .then((response) => {
+        console.log(response)
         pokeApp.getPokemon(response);   
     })
 
     .catch(error =>{
-        alert('Oops! please try again');
+        alert(`Sorry! We couldn't find the Pokemon you were looking for`);
     })
     
 } 
@@ -61,7 +61,6 @@ pokeApp.getTypeFromUserSearch = (q) => {
             
         })
 }
-console.log(array)
 
 
 // clear containers
@@ -89,12 +88,6 @@ pokeApp.noDamageToContainer = document.getElementById('noDamageTo')
 //function that gets the stength/weakness types and displays it on the page
 pokeApp.getStats = (response) => {
 
-    console.log(array)
-    array.forEach(object => {
-        console.log(object)
-    })
-
-    pokeApp.clearContainers();
     //get to the different stat arrays
     pokeApp.doubleDamageFrom = response.damage_relations.double_damage_from
 
@@ -108,7 +101,13 @@ pokeApp.getStats = (response) => {
 
     pokeApp.noDamageTo = response.damage_relations.no_damage_to
 
+    const typeToDisplayArray = []
     pokeApp.doubleDamageFrom.forEach(stat => {
+        if (!typeToDisplayArray.includes(stat)) {
+            typeToDisplayArray.push(stat)
+        }
+        // console.log(typeToDisplayArray)
+
         //create list element and append to ul
         pokeApp.listElement = document.createElement('li')
         pokeApp.doubleDamageFromContainer.appendChild(pokeApp.listElement)
@@ -161,6 +160,8 @@ pokeApp.getStats = (response) => {
         //add pokemon type to list
         pokeApp.listElement.innerHTML = stat.name
     })
+
+    array.length = 0
 }
 
 //picture and pokemon name display
@@ -190,7 +191,7 @@ pokeApp.getPokemon = (response) => {
         pokeApp.getTypeFromUserSearch(object.type.url)
     });
 
-    array.length = 0
+    // array.length = 0
 
     pokeApp.imgContainer = document.querySelector('.imageContainer');
     pokeApp.nameContainer = document.getElementById('pkmnName')
@@ -211,6 +212,7 @@ pokeApp.eventListener = () => {
 [...radioButtons].forEach(button => {
         //add listener 
         button.addEventListener("click", (event) => {
+            pokeApp.clearContainers();
             
             //prevent default form makes the blue btns dispear
             //    event.preventDefault() 
@@ -228,15 +230,17 @@ pokeApp.pokemonEventListener = () => {
     const form = document.querySelector('form');
     const inputElement = document.querySelector('input')
     form.addEventListener('submit', function(e){
+        pokeApp.clearContainers();
         //prevent default form 
         e.preventDefault();
 
         
         //gets the user input 
         const userInput = inputElement.value;
+        const userInputLowerCase = userInput.toLowerCase()
 
         //input value passes to the getUserPokemon Api 
-        pokeApp.getUserPokemon(userInput);
+        pokeApp.getUserPokemon(userInputLowerCase);
         inputElement.value = '';
     })
     

@@ -33,6 +33,10 @@ label {
     text-transform: capitalize;
 }
 
+input[type="radio"]:checked + label {
+    border: 2px solid black;
+}
+
 //Color for each type button//
 
 //normal
