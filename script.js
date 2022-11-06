@@ -33,7 +33,6 @@ pokeApp.getUserPokemon = (q) => {
         
     })
     .then((response) => {
-        console.log(response)
         pokeApp.getPokemon(response);   
     })
 
@@ -101,12 +100,7 @@ pokeApp.getStats = (response) => {
 
     pokeApp.noDamageTo = response.damage_relations.no_damage_to
 
-    const typeToDisplayArray = []
     pokeApp.doubleDamageFrom.forEach(stat => {
-        if (!typeToDisplayArray.includes(stat)) {
-            typeToDisplayArray.push(stat)
-        }
-        // console.log(typeToDisplayArray)
 
         //create list element and append to ul
         pokeApp.listElement = document.createElement('li')
