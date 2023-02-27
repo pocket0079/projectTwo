@@ -321,6 +321,14 @@ input {
 
 input[type=text] {
   width: 80%;
+  border: 1px solid rgba(93, 88, 88, 0.2);
+}
+
+input[type=text]:hover {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgb(237, 234, 234);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 label {
@@ -331,12 +339,25 @@ label {
   padding: 10px;
   margin: 1px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   text-transform: uppercase;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+label:hover {
+  border-radius: 0px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.userType p {
+  margin: 0;
+  margin-bottom: -15px;
 }
 
 .userType ul {
@@ -352,10 +373,6 @@ label {
       -ms-flex-pack: center;
           justify-content: center;
   text-transform: capitalize;
-}
-
-input[type=radio]:checked + label {
-  border: 2px solid black;
 }
 
 input[type=radio]#normal + label {
