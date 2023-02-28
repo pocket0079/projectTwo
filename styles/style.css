@@ -264,6 +264,11 @@ p {
   font-weight: bold;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 section {
   margin-top: 5%;
   margin-bottom: 5%;
@@ -286,7 +291,7 @@ footer p {
 }
 
 .logo img {
-  width: 28%;
+  max-width: 30%;
 }
 
 .container ul {
@@ -545,12 +550,14 @@ input[type=radio]#fairy + label:active {
   background-color: #ffcc00;
   margin-right: 5%;
   padding: 20px;
+  border-radius: 15px;
 }
 
 .defenseContainer {
   border: 3px solid #2575bb;
   background-color: #ffcc00;
   padding: 20px;
+  border-radius: 15px;
 }
 
 .damageStats h2 {
@@ -574,6 +581,14 @@ input[type=radio]#fairy + label:active {
   margin: 5px 0px;
 }
 
+@media (max-width: 1025px) {
+  .logo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 @media (max-width: 770px) {
   .wrapper {
     width: 90%;
@@ -594,8 +609,9 @@ input[type=radio]#fairy + label:active {
   .offenseContainer {
     margin: 0;
   }
-}
-@media (max-width: 500px) {
+  .defenseContainer {
+    margin-top: 10px;
+  }
   .pkmnPicAndName {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
