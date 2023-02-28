@@ -246,6 +246,7 @@ body {
 }
 
 h1 {
+  font-size: 3rem;
   text-align: center;
   color: darkred;
   font-family: "Press Start 2P", cursive;
@@ -259,7 +260,7 @@ h2, h3 {
 
 p {
   font-size: 1rem;
-  margin-top: 0;
+  margin: 0;
   font-weight: bold;
 }
 
@@ -272,13 +273,13 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .logo img {
-  width: 50%;
+  width: 28%;
 }
 
 .container ul {
@@ -293,8 +294,9 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .imageContainer {
