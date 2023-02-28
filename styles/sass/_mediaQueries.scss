@@ -1,3 +1,8 @@
+@media (max-width: 1025px){
+    .logo{
+        flex-direction: column;
+    }
+}
 @media (max-width: 770px){
     .wrapper{
         width: 90%;
@@ -14,18 +19,18 @@
     .damageStats{
         flex-direction: column;
     }
-        .offenseContainer{
-            margin: 0;
-        }
-}
-
-@media(max-width:500px){
+    .offenseContainer{
+        margin: 0;
+    }
+    .defenseContainer{
+        margin-top: 10px;
+    }
     .pkmnPicAndName{
         flex-direction: column;
     }
     .imageContainer{
         padding-top: 20px;
-
+    
     }
     .container h2{
         text-align: center;

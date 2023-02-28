@@ -246,6 +246,7 @@ body {
 }
 
 h1 {
+  font-size: 3rem;
   text-align: center;
   color: darkred;
   font-family: "Press Start 2P", cursive;
@@ -259,8 +260,13 @@ h2, h3 {
 
 p {
   font-size: 1rem;
-  margin-top: 0;
+  margin: 0;
   font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 section {
@@ -268,17 +274,24 @@ section {
   margin-bottom: 5%;
 }
 
+footer p {
+  text-align: center;
+  padding: 5px 0px;
+  background-color: #ffcc00;
+  border-top: 2px solid #8b0000;
+}
+
 .logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .logo img {
-  width: 50%;
+  max-width: 30%;
 }
 
 .container ul {
@@ -293,8 +306,9 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .imageContainer {
@@ -321,22 +335,46 @@ input {
 
 input[type=text] {
   width: 80%;
+  border: 1px solid rgba(93, 88, 88, 0.2);
+}
+
+input[type=text]:hover {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgb(237, 234, 234);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 label {
-  font-size: 1rem;
-  color: white;
-  width: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black;
+  width: 110px;
   display: block;
-  padding: 10px;
-  margin: 1px;
+  padding: 10px 3px;
+  margin: 2px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 2px rgba(247, 241, 241, 0.8);
   text-transform: uppercase;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+label:hover {
+  color: white;
+  text-shadow: 1px 1px 2px rgba(3, 3, 3, 0.8);
+  border-radius: 0px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.userType p {
+  margin: 0;
+  margin-bottom: -15px;
 }
 
 .userType ul {
@@ -354,12 +392,8 @@ label {
   text-transform: capitalize;
 }
 
-input[type=radio]:checked + label {
-  border: 2px solid black;
-}
-
 input[type=radio]#normal + label {
-  background: #A8A878;
+  background: #eee8aa;
 }
 
 input[type=radio]#normal + label:active {
@@ -471,7 +505,7 @@ input[type=radio]#ghost + label:active {
 }
 
 input[type=radio]#dark + label {
-  background: #705848;
+  background: #856b59;
 }
 
 input[type=radio]#dark + label:active {
@@ -499,7 +533,7 @@ input[type=radio]#fairy + label {
 }
 
 input[type=radio]#fairy + label:active {
-  background: #863470;
+  background: #812d6a;
 }
 
 .damageStats {
@@ -515,21 +549,26 @@ input[type=radio]#fairy + label:active {
   border: 3px solid #2575bb;
   background-color: #ffcc00;
   margin-right: 5%;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .defenseContainer {
   border: 3px solid #2575bb;
   background-color: #ffcc00;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .damageStats h2 {
   text-align: center;
   font-family: "Press Start 2P", cursive;
-  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
 }
 
 .damageStats h3 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-align: center;
   margin: 5px;
 }
@@ -539,8 +578,17 @@ input[type=radio]#fairy + label:active {
   text-align: center;
   padding: 0;
   text-transform: capitalize;
+  margin: 5px 0px;
 }
 
+@media (max-width: 1025px) {
+  .logo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 @media (max-width: 770px) {
   .wrapper {
     width: 90%;
@@ -561,8 +609,9 @@ input[type=radio]#fairy + label:active {
   .offenseContainer {
     margin: 0;
   }
-}
-@media (max-width: 500px) {
+  .defenseContainer {
+    margin-top: 10px;
+  }
   .pkmnPicAndName {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

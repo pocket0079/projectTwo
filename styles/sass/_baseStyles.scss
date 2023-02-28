@@ -19,6 +19,7 @@ margin: 0 auto;
 }
 
 h1{
+    font-size: 3rem;
     text-align: center;
     color: darkred; 
     font-family: 'Press Start 2P', cursive;
@@ -32,13 +33,27 @@ h2, h3{
 
 p{
     font-size: 1rem;
-    margin-top: 0;
+    margin: 0;
     font-weight: bold;
+}
+
+img{
+    max-width: 100%;
+    display: block;
 }
 
 section {
     margin-top: 5%;
     margin-bottom: 5%;
+}
+
+footer{
+    p{
+        text-align: center;
+        padding: 5px 0px;
+        background-color: #ffcc00;
+        border-top: 2px solid #8b0000;
+    }
 }
 
 
