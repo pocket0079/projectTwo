@@ -1,180 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>Pokemon Battle Chart</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <header>
-            <div class="logo">
-            <img src="./assets/International_Pokémon_logo.svg.png" alt="pokemon logo"> 
-            <h1>Battle Chart</h1>
-            </div>
-        </header>   
+      <header>
+        <div class="logo">
+          <img
+            src="./assets/International_Pokémon_logo.svg.png"
+            alt="pokemon logo"
+          />
+          <h1>Battle Chart</h1>
+        </div>
+      </header>
 
-        <main>
-            <section class="pkmnPicAndName">
+      <main>
+        <section class="pkmnPicAndName">
+          <div class="container">
+            <p>Search for a Pokémon by name or Pokédex number:</p>
+            <form action="#" class="userPkmn">
+              <input type="text" />
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
 
-                <div class="container">
-                <p>Search for a Pokémon by name or Pokédex number:</p>
-                <form action="#" class="userPkmn">
-                    <input type="text">
-                    <input type="submit" value="🔍">
-                </form>
-                </div>
+          <div class="imageContainer"></div>
 
-                <div class="imageContainer"></div>
+          <div class="container">
+            <h2 id="pkmnName"></h2>
+            <ul id="typeList"></ul>
+          </div>
+        </section>
 
-                <div class="container">
-                        <h2 id="pkmnName"></h2>
-                        <ul id="typeList"></ul>
-                </div>
-
-            </section>
-        
-    
-        
         <form action="#" class="userType" id="selection">
-            <p>Select your Pokemon's type to see what type it'll be effective against. If not listed, it will do normal damage.</p>    
-            <ul>
-                <li>
-                    <input type="radio" name="selection" value="1" id="normal" class="radioBtn">
-                    <label for="normal">Normal</label>
-                </li>
+          <p>
+            Select your Pokemon's type to see what type it'll be effective
+            against. If not listed, it will do normal damage.
+          </p>
+          <ul>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="1"
+                id="normal"
+                class="radioBtn"
+              />
+              <label for="normal">Normal</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="10" id="fire" class="radioBtn">
-                    <label for="fire">Fire</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="10"
+                id="fire"
+                class="radioBtn"
+              />
+              <label for="fire">Fire</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="11" id="water" class="radioBtn">
-                    <label for="water">Water</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="11"
+                id="water"
+                class="radioBtn"
+              />
+              <label for="water">Water</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="12" id="grass" class="radioBtn">
-                    <label for="grass">Grass</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="12"
+                id="grass"
+                class="radioBtn"
+              />
+              <label for="grass">Grass</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="13" id="electric" class="radioBtn">
-                    <label for="electric">Electric</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="13"
+                id="electric"
+                class="radioBtn"
+              />
+              <label for="electric">Electric</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="15" id="ice" class="radioBtn">
-                    <label for="ice">Ice</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="15"
+                id="ice"
+                class="radioBtn"
+              />
+              <label for="ice">Ice</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="2" id="fighting" class="radioBtn">
-                    <label for="fighting">Fighting</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="2"
+                id="fighting"
+                class="radioBtn"
+              />
+              <label for="fighting">Fighting</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="4" id="poison" class="radioBtn">
-                    <label for="poison">Poison</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="4"
+                id="poison"
+                class="radioBtn"
+              />
+              <label for="poison">Poison</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="5" id="ground" class="radioBtn">
-                    <label for="ground">Ground</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="5"
+                id="ground"
+                class="radioBtn"
+              />
+              <label for="ground">Ground</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="3" id="flying" class="radioBtn">
-                    <label for="flying">Flying</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="3"
+                id="flying"
+                class="radioBtn"
+              />
+              <label for="flying">Flying</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="14" id="psychic" class="radioBtn">
-                    <label for="psychic">Psychic</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="14"
+                id="psychic"
+                class="radioBtn"
+              />
+              <label for="psychic">Psychic</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="7" id="bug" class="radioBtn">
-                    <label for="bug">Bug</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="7"
+                id="bug"
+                class="radioBtn"
+              />
+              <label for="bug">Bug</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="6" id="rock" class="radioBtn">
-                    <label for="rock">Rock</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="6"
+                id="rock"
+                class="radioBtn"
+              />
+              <label for="rock">Rock</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="8" id="ghost" class="radioBtn">
-                    <label for="ghost">Ghost</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="8"
+                id="ghost"
+                class="radioBtn"
+              />
+              <label for="ghost">Ghost</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="17" id="dark" class="radioBtn">
-                    <label for="dark">Dark</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="17"
+                id="dark"
+                class="radioBtn"
+              />
+              <label for="dark">Dark</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="16" id="dragon" class="radioBtn">
-                    <label for="dragon">Dragon</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="16"
+                id="dragon"
+                class="radioBtn"
+              />
+              <label for="dragon">Dragon</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="9" id="steel" class="radioBtn">
-                    <label for="steel">Steel</label>
-                </li>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="9"
+                id="steel"
+                class="radioBtn"
+              />
+              <label for="steel">Steel</label>
+            </li>
 
-                <li>
-                    <input type="radio" name="selection" value="18" id="fairy" class="radioBtn">
-                    <label for="fairy">Fairy</label>
-                </li>
-            </ul>
+            <li>
+              <input
+                type="radio"
+                name="selection"
+                value="18"
+                id="fairy"
+                class="radioBtn"
+              />
+              <label for="fairy">Fairy</label>
+            </li>
+          </ul>
         </form>
 
         <section class="damageStats">
-            <div class="offenseContainer">
-                <h2>Offense</h2>
-                <h3>Super Effective!</h3>
-                <ul id="doubleDamageTo" class="statContainer">
-                </ul>
+          <div class="offenseContainer">
+            <h2>Offense</h2>
+            <h3>Super Effective!</h3>
+            <ul id="doubleDamageTo" class="statContainer"></ul>
 
-                <h3>Not very effective...</h3>
-                <ul id="halfDamageTo" class="statContainer">
-                </ul>
+            <h3>Not very effective...</h3>
+            <ul id="halfDamageTo" class="statContainer"></ul>
 
-                <h3>No Damage To</h3>
-                <ul id="noDamageTo" class="statContainer">
-                </ul>
-            </div>
+            <h3>No Damage To</h3>
+            <ul id="noDamageTo" class="statContainer"></ul>
+          </div>
 
-            <div class="defenseContainer">
-                <h2>Defense</h2>
-                <h3>Super Effective!</h3>
-                <ul id="doubleDamageFrom" class="statContainer">
-                </ul>
-                
-                <h3>Not very effective...</h3>
-                <ul id="halfDamageFrom" class="statContainer">
-                </ul>
-                
-                <h3>No Damage From</h3>
-                <ul id="noDamageFrom" class="statContainer">
-                </ul>
-            </div>
+          <div class="defenseContainer">
+            <h2>Defense</h2>
+            <h3>Super Effective!</h3>
+            <ul id="doubleDamageFrom" class="statContainer"></ul>
+
+            <h3>Not very effective...</h3>
+            <ul id="halfDamageFrom" class="statContainer"></ul>
+
+            <h3>No Damage From</h3>
+            <ul id="noDamageFrom" class="statContainer"></ul>
+          </div>
         </section>
+      </main>
     </div>
 
-    </main>
     <footer>
-        <p>Created by James Sto.Tomas and Jessica Handrahan at Juno College 2023</p>
+      <p>
+        Created by James Sto.Tomas and Jessica Handrahan at Juno College 2023
+      </p>
     </footer>
-</body>
-<script src="./script.js"></script>
+  </body>
+  <script src="./script.js"></script>
 </html>
