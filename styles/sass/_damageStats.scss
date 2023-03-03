@@ -1,41 +1,41 @@
 //Styling for the Damage stat Cards
 .damageStats {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .offenseContainer {
-    border: 3px solid #2575bb;
-    background-color: #ffcc00;
-    margin-right: 5%;
-    padding: 20px;
-    border-radius: 15px;
+  border: 3px solid #2575bb;
+  background-color: #ffcc00;
+  margin-right: 5%;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .defenseContainer {
-    border: 3px solid #2575bb;
-    background-color: #ffcc00;
-    padding: 20px;
-    border-radius: 15px;
+  border: 3px solid #2575bb;
+  background-color: #ffcc00;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .damageStats h2 {
-    text-align: center;
-    font-family: 'Press Start 2P', cursive;
-    margin-bottom: 10px;
-    font-size: 1.4rem;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
 }
 
 .damageStats h3 {
-    font-size: 0.8rem;
-    text-align: center;
-    margin: 5px;
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 5px;
 }
 
 .damageStats ul {
-    list-style: none;
-    text-align: center;
-    padding: 0;
-    text-transform: capitalize;
-    margin: 5px 0px;
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  text-transform: capitalize;
+  margin: 5px 0px;
 }
