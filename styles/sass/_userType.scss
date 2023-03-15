@@ -1,4 +1,7 @@
 //Styling for the type buttons
+form{
+  text-align: center;
+}
 input {
   appearance: none;
 }
@@ -6,6 +9,7 @@ input {
 input[type="text"] {
   width: 80%;
   border: 1px solid rgba(93, 88, 88, 0.2);
+  padding: 0px;
 }
 
 input[type="text"]:hover {

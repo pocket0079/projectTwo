@@ -1,5 +1,18 @@
 // Styling for the Seach Pokemon //
-
+.searchBtn {
+  padding: 0px;
+  border: 1px solid rgba(93, 88, 88, 0.2);
+  i {
+    padding: 0px 5px;
+  }
+  &:hover,
+  &:focus {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgb(237, 234, 234);
+    transition: 0.4s;
+    cursor: pointer;
+  }
+}
 .container ul {
   list-style: none;
   padding: 0;
